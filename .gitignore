@@ -1,0 +1,33 @@
+# C++ build outputs
+*.exe
+*.out
+*.o
+*.obj
+*.a
+*.lib
+*.dll
+*.so
+
+# Debug symbols and crash dumps
+*.pdb
+*.idb
+*.ilk
+*.dSYM/
+*.stackdump
+
+# CMake / Make generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+Makefile
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# VS Code temporary files
+.vscode/*.log
