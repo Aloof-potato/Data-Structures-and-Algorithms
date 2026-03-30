@@ -6,6 +6,7 @@ void Attach(int c,int e,Node*&tail){
     Node*newNode=new Node;
     newNode->coef=c;
     newNode->expon=e;
+    newNode->next=nullptr;
     tail->next=newNode;
     tail=newNode;
 }

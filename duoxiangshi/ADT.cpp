@@ -13,6 +13,7 @@ Node*create(){
         Node*newNode=new Node;
         newNode->coef=c;
         newNode->expon=e;
+        newNode->next=nullptr;
         tail->next=newNode;
         tail=newNode;
     }
