@@ -1,4 +1,4 @@
-# C++ build outputs
+﻿# C++ build outputs
 *.exe
 *.out
 *.o
@@ -16,11 +16,14 @@
 *.stackdump
 
 # CMake / Make generated files
+build/
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
 compile_commands.json
 Makefile
+Testing/
+CTestTestfile.cmake
 
 # Temporary files
 *.tmp

@@ -1,18 +1,18 @@
-{
+﻿{
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C++ 调试(多文件)",
+            "name": "Debug Active CPP",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\app.exe",
+            "program": "${workspaceFolder}/build/bin/${relativeFileDirname}/${relativeFileDirname}_${fileBasenameNoExtension}.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "D:\\mingw64\\bin\\gdb.exe",
+            "miDebuggerPath": "D:/mingw64/bin/gdb.exe",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -20,7 +20,21 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C++: 构建当前目录(多文件)"
+            "preLaunchTask": "CMake: Build Active File Target"
+        },
+        {
+            "name": "Run Active CPP (No Build)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/bin/${relativeFileDirname}/${relativeFileDirname}_${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "D:/mingw64/bin/gdb.exe",
+            "noDebug": true
         }
     ]
 }

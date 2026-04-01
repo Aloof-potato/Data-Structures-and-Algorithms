@@ -1,50 +1,85 @@
-{
+﻿{
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "C++: 构建当前文件(单文件)",
-            "type": "cppbuild",
-            "command": "D:\\mingw64\\bin\\g++.exe",
+            "label": "CMake: Configure",
+            "type": "shell",
+            "command": "cmake",
             "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "-S",
+                ".",
+                "-B",
+                "build",
+                "-G",
+                "MinGW Makefiles",
+                "-DCMAKE_BUILD_TYPE=Debug",
+                "-DCMAKE_CXX_COMPILER=D:/mingw64/bin/g++.exe"
             ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build"
-            },
-            "detail": "编译当前活动 .cpp 文件。"
+            "problemMatcher": []
         },
         {
-            "label": "C++: 构建当前目录(多文件)",
-            "type": "cppbuild",
-            "command": "D:\\mingw64\\bin\\g++.exe",
+            "label": "CMake: Build All",
+            "type": "shell",
+            "command": "cmake",
             "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${fileDirname}\\*.cpp",
-                "-o",
-                "${fileDirname}\\app.exe"
+                "--build",
+                "build"
             ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
+            "dependsOn": "CMake: Configure",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "编译当前文件所在目录下所有 .cpp 文件。"
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "CMake: Build Active File Target",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "build",
+                "--target",
+                "${relativeFileDirname}_${fileBasenameNoExtension}"
+            ],
+            "dependsOn": "CMake: Configure",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Run: Active File Executable (No Build)",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/c",
+                "chcp 65001>nul && \"${workspaceFolder}\\build\\bin\\${relativeFileDirname}\\${relativeFileDirname}_${fileBasenameNoExtension}.exe\""
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake: Build Target",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "build",
+                "--target",
+                "${input:targetName}"
+            ],
+            "dependsOn": "CMake: Configure",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "targetName",
+            "type": "promptString",
+            "description": "Input CMake target name, e.g. chapter_tree_binary_tree"
         }
     ]
 }
