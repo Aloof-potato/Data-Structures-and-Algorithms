@@ -14,8 +14,8 @@
 - [ ] chapter_array_and_linkedlist
 - [ ] chapter_stack_and_queue
 - [ ] chapter_hashing
-- [ ] chapter_tree
-- [ ] chapter_heap
+- [√] chapter_tree
+- [√] chapter_heap
 - [ ] chapter_graph
 - [ ] chapter_searching
 - [ ] chapter_sorting
@@ -60,17 +60,17 @@
 - [ ] simple_hash.cpp
 
 ### chapter_tree
-- [ ] array_binary_tree.cpp
+- [√] array_binary_tree.cpp
 - [ ] avl_tree.cpp
-- [ ] binary_search_tree.cpp
-- [ ] binary_tree.cpp
-- [ ] binary_tree_bfs.cpp
-- [ ] binary_tree_dfs.cpp
+- [√] binary_search_tree.cpp
+- [√] binary_tree.cpp
+- [√] binary_tree_bfs.cpp
+- [√] binary_tree_dfs.cpp
 
 ### chapter_heap
-- [ ] heap.cpp
-- [ ] my_heap.cpp
-- [ ] top_k.cpp
+- [√] heap.cpp
+- [√] my_heap.cpp
+- [√] top_k.cpp
 
 ### chapter_graph
 - [ ] graph_adjacency_list.cpp
