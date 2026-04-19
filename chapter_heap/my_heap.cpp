@@ -8,9 +8,9 @@ class MaxHeap
     MaxHeap(vector<int>&heap){
        //将列表不变的添加到堆中
         Maxheap=heap;
-       //自底向顶堆化除了叶节点以外的节点
+       //从最后一个非叶子节点开始，倒序遍历，对每个非叶子节点进行自顶向底堆化操作
        for(int i=parent(size()-1);i>=0;i--){
-        siftUp(i);
+        siftDown(i);
        }
     }
 
