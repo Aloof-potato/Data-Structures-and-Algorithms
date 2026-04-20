@@ -4,7 +4,7 @@
 /* 基于邻接表实现的无向图类 */
 class GraphAdjList
 {
-    private:
+    public:
     //邻接表，key为顶点，val为顶点指向的链表(即该顶点的所有邻接点)
     //用vector代替链表，便于添加和删除顶点
    unordered_map<Vertex*,vector<Vertex*>> adjList;
@@ -13,8 +13,7 @@ class GraphAdjList
    void Remove(vector<Vertex*>& vec,  Vertex* v){
     vec.erase(remove(vec.begin(),vec.end(),v),vec.end());
    }
-
-    public:
+   
     /*构造函数*/
     //初始化
     GraphAdjList(const vector<vector<Vertex*>> &edges){ //edges为边的集合
